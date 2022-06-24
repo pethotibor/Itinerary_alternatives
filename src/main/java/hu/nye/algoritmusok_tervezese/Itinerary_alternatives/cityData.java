@@ -20,5 +20,17 @@ class cityData {
         
     }
  
+    public void setup(int id1, String from, String to, int tc, int time) {
+        this.id = id1;
+        this.fromCity = from;
+        this.toCity = to;
+        this.transferCount = tc;
+        this.time = time;
+    }
     
+    public cityData setup_now(int id1, String from, String to, int tc, int time) {
+        cityData data = new cityData();
+        data.setup(id1, from, to, tc, time);
+        return data;
+    }
 }
