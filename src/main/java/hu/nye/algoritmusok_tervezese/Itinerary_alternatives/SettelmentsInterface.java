@@ -4,16 +4,13 @@
  */
 package hu.nye.algoritmusok_tervezese.Itinerary_alternatives;
 
-import hu.nye.algoritmusok_tervezese.Itinerary_alternatives.database_models.Continets;
-import org.springframework.data.jpa.repository.JpaRepository;
+import hu.nye.algoritmusok_tervezese.Itinerary_alternatives.database_models.Settelments;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author x
  */
-@Repository
-public interface ContinentsTable extends CrudRepository<Continets, Long> {
+public interface SettelmentsInterface extends CrudRepository<Settelments, Long> {
     
 }

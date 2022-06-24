@@ -4,7 +4,9 @@
  */
 package hu.nye.algoritmusok_tervezese.Itinerary_alternatives;
 
-import hu.nye.algoritmusok_tervezese.Itinerary_alternatives.database_models.ContinetsModel;
+import hu.nye.algoritmusok_tervezese.Itinerary_alternatives.database_models.Continets;
+import hu.nye.algoritmusok_tervezese.Itinerary_alternatives.database_models.Settelments;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,11 +28,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Controllers {
                 @Autowired
                 ContinentsTable continets;   
+                SettelmentsInterface settelments;
     
        @GetMapping("/continents")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
-                List<ContinetsModel> continents_found = new ArrayList<>();
+                List<Continets> continents_found = new ArrayList<>();
                 continets.findAll().forEach(continents_found::add);
 		return "continents";
 	}
@@ -47,6 +50,14 @@ public class Controllers {
                 model.addAttribute("cityData", cityData1);
                 
 		return "routes";
+	}
+        
+        @GetMapping("/cities")
+	public String cities(Model model) {
+                List<Settelments> settelments_found = new ArrayList<>();
+                settelments.findAll().forEach(settelments_found::add);
+                model.addAttribute("cities", settelments_found);
+		return "cities";
 	}
         
         @RequestMapping("/{id}")
