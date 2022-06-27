@@ -74,17 +74,12 @@
        <div class="col-sm text-dark">Repülőterek száma</div>
     </div> 
 
-    <div class="container-fluid"></div>
-    <div class="row alert-success text-dark fw-bold p-3 my-0 "></div>
+    <div class="container-fluid" th:switch="${#lists.isEmpty(cities)}" >
+        <div class="row alert-success text-dark fw-bold p-3 my-0 " th:case="false" th:each="c : ${cities}"  >
+            <div  th:text="${c.name}"></div>
+        </div>
+    
 
-    <div class="container-fluid"></div>
-    <div class="row alert-success text-dark fw-bold p-3 my-1"></div>
-
-    <div class="container-fluid"></div>
-    <div class="row alert-success text-dark fw-bold p-3 my-1"></div>
-
-    <div class="container-fluid"></div>
-    <div class="row alert-success text-dark fw-bold p-3 my-1"></div>
   </div>
   
   
@@ -96,11 +91,11 @@
         <h3>Add meg a város adatait!</h3>
         <div class="mb-4 mt-4 ">
             <label for="text">Város neve</label>
-            <input type="text" class="form-control" id="varos_neve" placeholder="Város neve" name="varos_neve">
+            <input type="text" class="form-control" id="name" placeholder="Város neve" name="varos_neve">
           </div>
           <div class="mb-3">
             <label for="text">Ország azonosító</label>
-            <input type="text" class="form-control" id="orszag_azonosito" placeholder="Ország azonosító" name="orszag_azonosito">
+            <input type="text" class="form-control" id="countryId" placeholder="Ország azonosító" name="orszag_azonosito">
           </div>
           <div class="mb-3">
             <label for="text">Buszmegállók száma </label>
