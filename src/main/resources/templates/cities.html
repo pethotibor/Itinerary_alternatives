@@ -74,11 +74,11 @@
        <div class="col-sm text-dark">Repülőterek száma</div>
     </div> 
 
-    <div class="container-fluid" th:if="${#lists.isEmpty(cityData)}" >
-        <div class="row alert-success text-dark fw-bold p-3 my-0 "  >
-            
+    <div class="container-fluid" th:switch="${#lists.isEmpty(cities)}" >
+        <div class="row alert-success text-dark fw-bold p-3 my-0 " th:case="false" th:each="c : ${cities}"  >
+            <div  th:text="${c.name}"></div>
         </div>
-    </div>
+    
 
   </div>
   

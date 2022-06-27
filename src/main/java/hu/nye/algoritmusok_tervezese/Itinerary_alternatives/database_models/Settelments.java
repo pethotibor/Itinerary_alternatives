@@ -17,7 +17,8 @@ import javax.persistence.Id;
 @Entity
 public class Settelments {
         @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id", updatable = false, nullable = false)
 	private long id;
 	@Column(name = "name")
 	private String name;

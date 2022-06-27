@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Controllers {
                 @Autowired
                 ContinentsTable continets;   
+                @Autowired
                 SettelmentsInterface settelments;
     
        @GetMapping("/continents")
