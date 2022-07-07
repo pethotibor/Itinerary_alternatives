@@ -15,6 +15,7 @@
                 <exec.appArgs></exec.appArgs>
                 <exec.mainClass>hu.nye.algoritmusok_tervezese.Itinerary_alternatives.ItineraryAlternativesApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
+                <env.DATABASE_URL>postgres://oeziszyslzukaa:f08c85e406e8f7d5b6ab0e9f0a33b99d8ed01fb984e90c8437232b30200d40d4@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d3lmkbpfcbm457</env.DATABASE_URL>
             </properties>
         </action>
         <action>
