@@ -7,6 +7,8 @@
  * Created: 2022. jún. 24.
  */
 insert into settelments (name, countryid) values('Csenger',0);
-insert into settelments (name, countryid) values('Nyíregyháza',0);
-insert into settelments (name, countryid) values('Debrecen',0);
+/*insert into settelments (name, countryid) values('Nyíregyháza',0);
+insert into settelments (name, countryid) values('Debrecen',0);*/
+INSERT INTO settelments (name, countryid) values('Nyíregyháza', 0);
+insert into settelments (name, countryid) values('Debrecen', 0);
 insert into settelments (name, countryid) values('Budapest',0);

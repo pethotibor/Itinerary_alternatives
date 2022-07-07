@@ -11,13 +11,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 /**
  *
@@ -26,6 +30,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Controllers {
+    CharacterEncodingFilter filter = new CharacterEncodingFilter();
+
+    void Controllers() {
+
+    }
+    
+    private static final Logger logger = LoggerFactory.getLogger("teszt");
                 @Autowired
                 ContinentsTable continets;   
                 @Autowired
@@ -36,6 +47,7 @@ public class Controllers {
 		model.addAttribute("name", name);
                 List<Continets> continents_found = new ArrayList<>();
                 continets.findAll().forEach(continents_found::add);
+                logger.info("ok");
 		return "continents";
 	}
 
@@ -57,6 +69,7 @@ public class Controllers {
 	public String cities(Model model) {
                 List<Settelments> settelments_found = new ArrayList<>();
                 settelments.findAll().forEach(settelments_found::add);
+                logger.info("ok"+settelments_found.toString());
                 model.addAttribute("cities", settelments_found);
 		return "cities";
 	}
