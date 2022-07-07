@@ -74,9 +74,11 @@
        <div class="col-sm text-dark">Repülőterek száma</div>
     </div> 
 
-    <div class="container-fluid" th:switch="${#lists.isEmpty(cities)}" >
-        <div class="row alert-success text-dark fw-bold p-3 my-0 " th:case="false" th:each="c : ${cities}"  >
-            <div  th:text="${c.name}"></div>
+    <div class="container-fluid"  th:each="c, state : ${cities}" >
+
+        <div class="row alert-success text-dark fw-bold p-3 my-1"    >
+            <div  th:text="${c.getname()}"></div>
+
         </div>
     
 

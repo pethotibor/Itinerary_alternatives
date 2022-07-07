@@ -29,12 +29,19 @@ public class Settelments {
     
 	}
         
+        public String getname() {
+            return name;
+        }
+        public void setname(String n) {
+            name = n;
+        }
+        
         public Settelments(String name, int countryId) {
             this.name = name;
             this.countryId = countryId;
         }
 	@Override
 	public String toString() {
-		return "Még nincs";
+		return Long.toString(id)+" "+name+" "+Integer.toString(countryId);
 	}
 }
